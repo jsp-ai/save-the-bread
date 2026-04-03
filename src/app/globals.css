@@ -10,6 +10,8 @@
   --color-accent-cyan: #06b6d4;
   --color-accent-teal: #14b8a6;
   --color-accent-gold: #eab308;
+  --color-accent-lime: #84cc16;
+  --color-accent-red: #ef4444;
 
   /* Neutrals */
   --color-neutral-950: #0a0a0f;
@@ -83,7 +85,7 @@ body {
   box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
 }
 
-/* Card styles */
+/* Card styles — Verge-inspired bold borders */
 .card-glass {
   background: rgba(17, 17, 24, 0.8);
   backdrop-filter: blur(12px);
@@ -96,6 +98,19 @@ body {
   box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
 }
 
+.card-bold {
+  background: var(--color-neutral-900);
+  border: 2px solid var(--color-neutral-800);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.card-bold:hover {
+  border-color: var(--color-brand-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+}
+
 /* Badge styles */
 .badge-gradient {
   background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
@@ -105,6 +120,104 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+/* Category chip — YouTube pattern */
+.chip {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: 1px solid var(--color-neutral-700);
+  background: transparent;
+  color: var(--color-neutral-400);
+}
+
+.chip:hover {
+  border-color: var(--color-brand-purple);
+  color: var(--color-neutral-100);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.chip-active {
+  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  color: white;
+  border-color: transparent;
+}
+
+/* Social proof badge */
+.proof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-neutral-400);
+}
+
+.proof-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-lime);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Trending number */
+.trending-num {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  -webkit-text-stroke: 1px var(--color-neutral-700);
+  color: transparent;
+}
+
+.group:hover .trending-num {
+  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-stroke: 0;
+}
+
+/* Horizontal scroll row — Netflix pattern */
+.scroll-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-row > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Swipe carousel */
+.swipe-card {
+  width: 85vw;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .swipe-card {
+    width: 340px;
+  }
 }
 
 /* Button base */
@@ -138,6 +251,17 @@ body {
 .btn-secondary:hover {
   border-color: var(--color-brand-purple);
   background: rgba(124, 58, 237, 0.1);
+}
+
+/* Divider — WSJ-inspired */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-neutral-700),
+    transparent
+  );
 }
 
 /* Scrollbar */
