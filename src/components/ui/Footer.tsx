@@ -1,13 +1,14 @@
 import Link from "next/link";
 
 const footerLinks = {
-  Content: [
+  Sections: [
     { label: "Bread Winners", href: "/profiles" },
-    { label: "Money Moves", href: "/articles" },
-    { label: "Side Hustle Lab", href: "/articles" },
-    { label: "The Toolkit", href: "/resources" },
+    { label: "Money Moves", href: "/articles?type=money-moves" },
+    { label: "Side Hustle Lab", href: "/articles?type=side-hustle-lab" },
+    { label: "Videos", href: "/videos" },
   ],
-  Tools: [
+  Resources: [
+    { label: "The Toolkit", href: "/resources" },
     { label: "Budget Calculator", href: "/tools/budget-calculator" },
     { label: "Side Hustle Finder", href: "/tools/side-hustle-finder" },
     { label: "Savings Tracker", href: "/tools/savings-tracker" },
