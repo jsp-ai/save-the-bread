@@ -30,7 +30,7 @@ export default function FrontendLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
+      <body className="min-h-screen bg-white text-neutral-900 antialiased">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

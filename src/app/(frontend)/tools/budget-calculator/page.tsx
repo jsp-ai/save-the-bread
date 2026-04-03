@@ -14,7 +14,7 @@ export default function BudgetCalculatorPage() {
           <h1 className="text-3xl font-black md:text-4xl">
             <span className="gradient-primary-text">The Bread Budget</span>
           </h1>
-          <p className="mt-3 text-neutral-400">
+          <p className="mt-3 text-neutral-500">
             See where your money actually goes. Takes about 2 minutes.
           </p>
         </div>

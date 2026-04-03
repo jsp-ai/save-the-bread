@@ -33,7 +33,7 @@ function DonutChart({
   const total = segments.reduce((sum, s) => sum + s.value, 0);
   if (total === 0) {
     return (
-      <div className="flex h-48 w-48 items-center justify-center rounded-full border-4 border-neutral-700">
+      <div className="flex h-48 w-48 items-center justify-center rounded-full border-4 border-neutral-200">
         <span className="text-sm text-neutral-500">Enter amounts</span>
       </div>
     );
@@ -57,7 +57,7 @@ function DonutChart({
         background: `conic-gradient(${gradientStops})`,
       }}
     >
-      <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-neutral-950">
+      <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-white">
         <span className="text-xs text-neutral-500">Total</span>
         <span className="text-lg font-bold">{formatCurrency(total)}</span>
       </div>
@@ -128,13 +128,13 @@ export function BudgetCalculator() {
   };
 
   const chartSegments = [
-    { label: "Needs", value: needs, color: "#7c3aed" },
-    { label: "Wants", value: wants, color: "#ec4899" },
-    { label: "Savings", value: savings, color: "#06b6d4" },
+    { label: "Needs", value: needs, color: "#0f172a" },
+    { label: "Wants", value: wants, color: "#d97706" },
+    { label: "Savings", value: savings, color: "#059669" },
     {
       label: "Unaccounted",
       value: Math.max(0, remaining),
-      color: "#2d2d3d",
+      color: "#e2e8f0",
     },
   ];
 
@@ -163,7 +163,7 @@ export function BudgetCalculator() {
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               incomeMode === "monthly"
                 ? "gradient-primary text-white"
-                : "border border-neutral-700 text-neutral-400"
+                : "border border-neutral-200 text-neutral-400"
             }`}
           >
             Monthly
@@ -173,7 +173,7 @@ export function BudgetCalculator() {
             className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
               incomeMode === "hourly"
                 ? "gradient-primary text-white"
-                : "border border-neutral-700 text-neutral-400"
+                : "border border-neutral-200 text-neutral-400"
             }`}
           >
             Hourly Wage
@@ -190,7 +190,7 @@ export function BudgetCalculator() {
               value={income || ""}
               onChange={(e) => setIncome(Number(e.target.value))}
               placeholder="0"
-              className="w-full rounded-xl border border-neutral-700 bg-neutral-800/50 py-3 pl-8 pr-4 text-xl font-bold text-neutral-100 outline-none transition-colors focus:border-brand-purple"
+              className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-3 pl-8 pr-4 text-xl font-bold text-neutral-900 outline-none transition-colors focus:border-accent-green"
             />
           </div>
         ) : (
@@ -208,7 +208,7 @@ export function BudgetCalculator() {
                   value={hourlyRate || ""}
                   onChange={(e) => setHourlyRate(Number(e.target.value))}
                   placeholder="0"
-                  className="w-full rounded-xl border border-neutral-700 bg-neutral-800/50 py-3 pl-7 pr-4 font-bold text-neutral-100 outline-none transition-colors focus:border-brand-purple"
+                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 py-3 pl-7 pr-4 font-bold text-neutral-900 outline-none transition-colors focus:border-accent-green"
                 />
               </div>
             </div>
@@ -220,12 +220,12 @@ export function BudgetCalculator() {
                 type="number"
                 value={hoursPerWeek || ""}
                 onChange={(e) => setHoursPerWeek(Number(e.target.value))}
-                className="w-full rounded-xl border border-neutral-700 bg-neutral-800/50 px-4 py-3 font-bold text-neutral-100 outline-none transition-colors focus:border-brand-purple"
+                className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 font-bold text-neutral-900 outline-none transition-colors focus:border-accent-green"
               />
             </div>
             {hourlyRate > 0 && (
               <div className="col-span-2 text-sm text-neutral-400">
-                Estimated monthly: <span className="font-bold text-neutral-100">{formatCurrency(effectiveIncome)}</span>
+                Estimated monthly: <span className="font-bold text-neutral-900">{formatCurrency(effectiveIncome)}</span>
               </div>
             )}
           </div>
@@ -241,10 +241,10 @@ export function BudgetCalculator() {
               <span
                 className={`h-2 w-2 rounded-full ${
                   cat.type === "needs"
-                    ? "bg-brand-purple"
+                    ? "bg-brand-navy"
                     : cat.type === "wants"
-                      ? "bg-brand-pink"
-                      : "bg-accent-cyan"
+                      ? "bg-accent-gold"
+                      : "bg-accent-green"
                 }`}
               />
               <span className="flex-1 text-sm text-neutral-300">
@@ -261,7 +261,7 @@ export function BudgetCalculator() {
                     updateCategory(cat.key, Number(e.target.value))
                   }
                   placeholder="0"
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-800/50 py-2 pl-6 pr-2 text-right text-sm text-neutral-100 outline-none transition-colors focus:border-brand-purple"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 py-2 pl-6 pr-2 text-right text-sm text-neutral-900 outline-none transition-colors focus:border-accent-green"
                 />
               </div>
             </div>
@@ -282,7 +282,7 @@ export function BudgetCalculator() {
             <div className="flex-1 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-brand-purple" />
+                  <div className="h-3 w-3 rounded-full bg-brand-navy" />
                   <span className="text-sm text-neutral-300">Needs</span>
                 </div>
                 <div className="text-right">
@@ -294,7 +294,7 @@ export function BudgetCalculator() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-brand-pink" />
+                  <div className="h-3 w-3 rounded-full bg-accent-gold" />
                   <span className="text-sm text-neutral-300">Wants</span>
                 </div>
                 <div className="text-right">
@@ -306,7 +306,7 @@ export function BudgetCalculator() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-accent-cyan" />
+                  <div className="h-3 w-3 rounded-full bg-accent-green" />
                   <span className="text-sm text-neutral-300">Savings</span>
                 </div>
                 <div className="text-right">
@@ -317,11 +317,11 @@ export function BudgetCalculator() {
                 </div>
               </div>
 
-              <div className="border-t border-neutral-700 pt-4">
+              <div className="border-t border-neutral-200 pt-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-neutral-400">Unaccounted</span>
                   <span
-                    className={`font-bold ${remaining < 0 ? "text-red-400" : remaining > 0 ? "text-accent-gold" : "text-neutral-100"}`}
+                    className={`font-bold ${remaining < 0 ? "text-red-400" : remaining > 0 ? "text-accent-gold" : "text-neutral-900"}`}
                   >
                     {formatCurrency(remaining)}
                   </span>
@@ -336,15 +336,15 @@ export function BudgetCalculator() {
           </div>
 
           {/* 50/30/20 Comparison */}
-          <div className="mt-8 rounded-xl border border-neutral-700/50 bg-neutral-800/30 p-4">
+          <div className="mt-8 rounded-xl border border-neutral-200/50 bg-neutral-100/30 p-4">
             <h3 className="mb-3 text-sm font-semibold text-neutral-300">
               50/30/20 Check
             </h3>
             <div className="space-y-2">
               {[
-                { label: "Needs", actual: needsPercent, target: 50, color: "bg-brand-purple" },
-                { label: "Wants", actual: wantsPercent, target: 30, color: "bg-brand-pink" },
-                { label: "Savings", actual: savingsPercent, target: 20, color: "bg-accent-cyan" },
+                { label: "Needs", actual: needsPercent, target: 50, color: "bg-brand-navy" },
+                { label: "Wants", actual: wantsPercent, target: 30, color: "bg-accent-gold" },
+                { label: "Savings", actual: savingsPercent, target: 20, color: "bg-accent-green" },
               ].map((item) => (
                 <div key={item.label}>
                   <div className="flex justify-between text-xs">
@@ -368,7 +368,7 @@ export function BudgetCalculator() {
 
           {/* Insight */}
           {getInsight() && (
-            <div className="mt-6 rounded-xl border border-brand-purple/20 bg-brand-purple/5 p-4">
+            <div className="mt-6 rounded-xl border border-accent-green/20 bg-brand-navy/5 p-4">
               <p className="text-sm text-neutral-300">{getInsight()}</p>
             </div>
           )}

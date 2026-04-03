@@ -1,37 +1,38 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Primary Gradient: Purple -> Electric Pink */
-  --color-brand-purple: #7c3aed;
-  --color-brand-pink: #ec4899;
-  --color-brand-magenta: #c026d3;
+  /* Primary: Deep Navy */
+  --color-brand-navy: #0f172a;
+  --color-brand-slate: #1e293b;
+  --color-brand-blue: #2563eb;
 
-  /* Accent Colors */
-  --color-accent-cyan: #06b6d4;
-  --color-accent-teal: #14b8a6;
-  --color-accent-gold: #eab308;
-  --color-accent-lime: #84cc16;
-  --color-accent-red: #ef4444;
+  /* Accent Colors — masculine, earthy */
+  --color-accent-green: #059669;
+  --color-accent-emerald: #10b981;
+  --color-accent-gold: #d97706;
+  --color-accent-amber: #f59e0b;
+  --color-accent-red: #dc2626;
 
-  /* Neutrals */
-  --color-neutral-950: #0a0a0f;
-  --color-neutral-900: #111118;
-  --color-neutral-800: #1e1e2a;
-  --color-neutral-700: #2d2d3d;
-  --color-neutral-600: #4a4a5e;
-  --color-neutral-400: #9494aa;
-  --color-neutral-300: #b8b8cc;
-  --color-neutral-200: #dddde8;
-  --color-neutral-100: #f0f0f5;
-  --color-neutral-50: #f8f8fc;
+  /* Light Neutrals */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
 
   /* Semantic */
-  --color-background: var(--color-neutral-950);
-  --color-foreground: var(--color-neutral-100);
-  --color-surface: var(--color-neutral-900);
-  --color-surface-hover: var(--color-neutral-800);
-  --color-border: var(--color-neutral-700);
-  --color-muted: var(--color-neutral-400);
+  --color-background: #ffffff;
+  --color-foreground: var(--color-neutral-900);
+  --color-surface: var(--color-neutral-50);
+  --color-surface-hover: var(--color-neutral-100);
+  --color-border: var(--color-neutral-200);
+  --color-muted: var(--color-neutral-500);
 
   /* Font */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -47,13 +48,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Gradient utilities */
+/* Gradient utilities — navy/green instead of purple/pink */
 .gradient-primary {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: linear-gradient(135deg, var(--color-brand-navy), var(--color-brand-slate));
 }
 
 .gradient-primary-text {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: linear-gradient(135deg, var(--color-accent-green), var(--color-accent-emerald));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,58 +63,46 @@ body {
 .gradient-glow {
   background: linear-gradient(
     135deg,
-    var(--color-brand-purple),
-    var(--color-brand-magenta),
-    var(--color-brand-pink)
+    var(--color-brand-navy),
+    var(--color-brand-slate),
+    var(--color-neutral-700)
   );
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, var(--color-accent-cyan), var(--color-accent-teal));
+  background: linear-gradient(135deg, var(--color-accent-green), var(--color-accent-emerald));
 }
 
-/* Glow effects */
-.glow-purple {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 60px rgba(124, 58, 237, 0.1);
-}
-
-.glow-pink {
-  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3), 0 0 60px rgba(236, 72, 153, 0.1);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
-}
-
-/* Card styles — Verge-inspired bold borders */
+/* Card styles — light theme */
 .card-glass {
-  background: rgba(17, 17, 24, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(124, 58, 237, 0.15);
+  background: white;
+  border: 1px solid var(--color-neutral-200);
   border-radius: 16px;
+  transition: all 0.2s ease;
 }
 
 .card-glass:hover {
-  border-color: rgba(124, 58, 237, 0.3);
-  box-shadow: 0 0 30px rgba(124, 58, 237, 0.1);
+  border-color: var(--color-neutral-300);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .card-bold {
-  background: var(--color-neutral-900);
-  border: 2px solid var(--color-neutral-800);
+  background: white;
+  border: 2px solid var(--color-neutral-200);
   border-radius: 16px;
   transition: all 0.2s ease;
 }
 
 .card-bold:hover {
-  border-color: var(--color-brand-purple);
+  border-color: var(--color-accent-green);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Badge styles */
 .badge-gradient {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: var(--color-brand-navy);
+  color: white;
   padding: 4px 12px;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -131,19 +120,19 @@ body {
   white-space: nowrap;
   transition: all 0.15s ease;
   cursor: pointer;
-  border: 1px solid var(--color-neutral-700);
-  background: transparent;
-  color: var(--color-neutral-400);
+  border: 1px solid var(--color-neutral-200);
+  background: white;
+  color: var(--color-neutral-500);
 }
 
 .chip:hover {
-  border-color: var(--color-brand-purple);
-  color: var(--color-neutral-100);
-  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--color-accent-green);
+  color: var(--color-neutral-900);
+  background: rgba(5, 150, 105, 0.05);
 }
 
 .chip-active {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: var(--color-brand-navy);
   color: white;
   border-color: transparent;
 }
@@ -155,14 +144,14 @@ body {
   gap: 4px;
   font-size: 0.6875rem;
   font-weight: 500;
-  color: var(--color-neutral-400);
+  color: var(--color-neutral-500);
 }
 
 .proof-badge .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent-lime);
+  background: var(--color-accent-green);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -176,12 +165,12 @@ body {
   font-size: 2.5rem;
   font-weight: 900;
   line-height: 1;
-  -webkit-text-stroke: 1px var(--color-neutral-700);
+  -webkit-text-stroke: 1.5px var(--color-neutral-200);
   color: transparent;
 }
 
 .group:hover .trending-num {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: linear-gradient(135deg, var(--color-accent-green), var(--color-accent-emerald));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -191,7 +180,7 @@ body {
 /* Horizontal scroll row — Netflix pattern */
 .scroll-row {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -210,19 +199,25 @@ body {
 
 /* Swipe carousel */
 .swipe-card {
-  width: 85vw;
-  max-width: 400px;
+  width: 80vw;
+  max-width: 340px;
+}
+
+@media (min-width: 640px) {
+  .swipe-card {
+    width: 300px;
+  }
 }
 
 @media (min-width: 768px) {
   .swipe-card {
-    width: 340px;
+    width: 320px;
   }
 }
 
 /* Button base */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-brand-purple), var(--color-brand-pink));
+  background: var(--color-brand-navy);
   color: white;
   padding: 12px 24px;
   border-radius: 12px;
@@ -233,35 +228,31 @@ body {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), 0 0 60px rgba(236, 72, 153, 0.2);
+  background: var(--color-brand-slate);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.3);
   transform: translateY(-1px);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-neutral-100);
+  color: var(--color-neutral-900);
   padding: 12px 24px;
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.2s ease;
-  border: 1px solid var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-300);
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-brand-purple);
-  background: rgba(124, 58, 237, 0.1);
+  border-color: var(--color-accent-green);
+  background: rgba(5, 150, 105, 0.05);
 }
 
 /* Divider — WSJ-inspired */
 .divider {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-neutral-700),
-    transparent
-  );
+  background: var(--color-neutral-200);
 }
 
 /* Scrollbar */
@@ -270,14 +261,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-neutral-950);
+  background: var(--color-neutral-50);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-700);
+  background: var(--color-neutral-300);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neutral-600);
+  background: var(--color-neutral-400);
 }

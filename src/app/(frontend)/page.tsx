@@ -49,113 +49,26 @@ const todaysBread = [
 ];
 
 const breadWinners = [
-  {
-    name: "Maya Chen",
-    title: "Freelance Video Editor",
-    stat: "$6.2K/mo",
-    age: 24,
-    platform: "TikTok",
-    href: "/profiles",
-    reads: "2.4K",
-  },
-  {
-    name: "DeShawn Williams",
-    title: "Sneaker Reseller \u2192 Brand Owner",
-    stat: "$120K/yr",
-    age: 22,
-    platform: "eBay \u2192 Shopify",
-    href: "/profiles",
-    reads: "4.1K",
-  },
-  {
-    name: "Priya Patel",
-    title: "UGC Content Creator",
-    stat: "$4.8K/mo",
-    age: 21,
-    platform: "Instagram",
-    href: "/profiles",
-    reads: "1.9K",
-  },
-  {
-    name: "Marcus Rivera",
-    title: "Online Math Tutor",
-    stat: "$3.5K/mo",
-    age: 20,
-    platform: "Wyzant",
-    href: "/profiles",
-    reads: "1.2K",
-  },
+  { name: "Maya Chen", title: "Freelance Video Editor", stat: "$6.2K/mo", age: 24, platform: "TikTok", href: "/profiles", reads: "2.4K" },
+  { name: "DeShawn Williams", title: "Sneaker Reseller \u2192 Brand Owner", stat: "$120K/yr", age: 22, platform: "eBay \u2192 Shopify", href: "/profiles", reads: "4.1K" },
+  { name: "Priya Patel", title: "UGC Content Creator", stat: "$4.8K/mo", age: 21, platform: "Instagram", href: "/profiles", reads: "1.9K" },
+  { name: "Marcus Rivera", title: "Online Math Tutor", stat: "$3.5K/mo", age: 20, platform: "Wyzant", href: "/profiles", reads: "1.2K" },
 ];
 
 const moneyMoves = [
-  {
-    tag: "First Paycheck",
-    title: "The First 48 Hours After Your First Direct Deposit Matter More Than You Think",
-    excerpt: "Set up these 3 things before you touch a dollar.",
-    reads: "1.8K",
-    href: "/articles",
-  },
-  {
-    tag: "Investing 101",
-    title: "Roth IRA vs. Savings Account: The $200K Difference Nobody Showed You",
-    excerpt: "Same money, wildly different outcomes. Here\u2019s the math.",
-    reads: "5.2K",
-    href: "/articles",
-  },
-  {
-    tag: "Debt Escape",
-    title: "Credit Score 101: The Number That Controls Your Rent, Car, and Phone Plan",
-    excerpt: "It doesn\u2019t measure responsibility. It measures profitability to lenders.",
-    reads: "3.7K",
-    href: "/articles",
-  },
-  {
-    tag: "Moving Out",
-    title: "The Real Monthly Cost of Living Alone at 22 (We Did the Math)",
-    excerpt: "Rent is the headline. Everything else is the fine print.",
-    reads: "2.9K",
-    href: "/articles",
-  },
-  {
-    tag: "Saving",
-    title: "The $200 Emergency Fund That Saved My Apartment",
-    excerpt: "You don\u2019t need $10K. You need enough to survive one bad week.",
-    reads: "4.4K",
-    href: "/articles",
-  },
+  { tag: "First Paycheck", title: "The First 48 Hours After Your First Direct Deposit Matter More Than You Think", excerpt: "Set up these 3 things before you touch a dollar.", reads: "1.8K", href: "/articles" },
+  { tag: "Investing 101", title: "Roth IRA vs. Savings Account: The $200K Difference Nobody Showed You", excerpt: "Same money, wildly different outcomes. Here\u2019s the math.", reads: "5.2K", href: "/articles" },
+  { tag: "Debt Escape", title: "Credit Score 101: The Number That Controls Your Rent, Car, and Phone Plan", excerpt: "It doesn\u2019t measure responsibility. It measures profitability to lenders.", reads: "3.7K", href: "/articles" },
+  { tag: "Moving Out", title: "The Real Monthly Cost of Living Alone at 22 (We Did the Math)", excerpt: "Rent is the headline. Everything else is the fine print.", reads: "2.9K", href: "/articles" },
+  { tag: "Saving", title: "The $200 Emergency Fund That Saved My Apartment", excerpt: "You don\u2019t need $10K. You need enough to survive one bad week.", reads: "4.4K", href: "/articles" },
 ];
 
 const sideHustles = [
-  {
-    title: "Freelance Video Editing",
-    income: "$2-6K/mo",
-    time: "2-4 weeks to first $",
-    href: "/articles",
-  },
-  {
-    title: "UGC Content Creation",
-    income: "$1-5K/mo",
-    time: "1-3 weeks to first $",
-    href: "/articles",
-  },
-  {
-    title: "Online Tutoring",
-    income: "$1.5-4K/mo",
-    time: "1 week to first $",
-    href: "/articles",
-  },
-  {
-    title: "Local Service Business",
-    income: "$2-10K/mo",
-    time: "1-2 weeks to first $",
-    href: "/articles",
-  },
-  {
-    title: "Social Media Management",
-    income: "$1.5-5K/mo",
-    time: "1-3 weeks to first $",
-    href: "/articles",
-  },
+  { title: "Freelance Video Editing", income: "$2-6K/mo", time: "2-4 weeks to first $", href: "/articles" },
+  { title: "UGC Content Creation", income: "$1-5K/mo", time: "1-3 weeks to first $", href: "/articles" },
+  { title: "Online Tutoring", income: "$1.5-4K/mo", time: "1 week to first $", href: "/articles" },
+  { title: "Local Service Business", income: "$2-10K/mo", time: "1-2 weeks to first $", href: "/articles" },
+  { title: "Social Media Management", income: "$1.5-5K/mo", time: "1-3 weeks to first $", href: "/articles" },
 ];
 
 const trending = [
@@ -170,28 +83,27 @@ const trending = [
 
 function TagBadge({ tag }: { tag: string }) {
   const colors: Record<string, string> = {
-    "Bread Winner": "bg-brand-purple/20 text-brand-purple border-brand-purple/30",
-    "Money Moves": "bg-brand-pink/20 text-brand-pink border-brand-pink/30",
-    "Side Hustle Lab": "bg-accent-cyan/20 text-accent-cyan border-accent-cyan/30",
-    "First Paycheck": "bg-accent-gold/20 text-accent-gold border-accent-gold/30",
-    "Investing 101": "bg-accent-teal/20 text-accent-teal border-accent-teal/30",
-    "Debt Escape": "bg-accent-red/20 text-accent-red border-accent-red/30",
-    "Moving Out": "bg-brand-magenta/20 text-brand-magenta border-brand-magenta/30",
-    Saving: "bg-accent-lime/20 text-accent-lime border-accent-lime/30",
-    Toolkit: "bg-accent-gold/20 text-accent-gold border-accent-gold/30",
+    "Bread Winner": "bg-brand-navy/10 text-brand-navy border-brand-navy/20",
+    "Money Moves": "bg-accent-green/10 text-accent-green border-accent-green/20",
+    "Side Hustle Lab": "bg-accent-gold/10 text-accent-gold border-accent-gold/20",
+    "First Paycheck": "bg-brand-blue/10 text-brand-blue border-brand-blue/20",
+    "Investing 101": "bg-accent-emerald/10 text-accent-emerald border-accent-emerald/20",
+    "Debt Escape": "bg-accent-red/10 text-accent-red border-accent-red/20",
+    "Moving Out": "bg-neutral-600/10 text-neutral-600 border-neutral-600/20",
+    Saving: "bg-accent-green/10 text-accent-green border-accent-green/20",
   };
   return (
     <span
-      className={`inline-block rounded-full border px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${colors[tag] || "bg-neutral-800 text-neutral-400 border-neutral-700"}`}
+      className={`inline-block rounded-full border px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider ${colors[tag] || "bg-neutral-100 text-neutral-500 border-neutral-200"}`}
     >
       {tag}
     </span>
   );
 }
 
-function ReadCount({ count }: { count: string }) {
+function ReadCount({ count, light }: { count: string; light?: boolean }) {
   return (
-    <span className="proof-badge">
+    <span className={`proof-badge ${light ? "text-white/50" : ""}`}>
       <span className="dot" />
       {count} reads
     </span>
@@ -202,7 +114,7 @@ export default function HomePage() {
   return (
     <>
       {/* ===== CATEGORY CHIPS (YouTube pattern) ===== */}
-      <section className="sticky top-[65px] z-40 border-b border-neutral-800/50 bg-neutral-950/90 backdrop-blur-xl">
+      <section className="sticky top-16 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-4">
           <div className="scroll-row py-3">
             {categoryChips.map((chip, i) => (
@@ -226,17 +138,19 @@ export default function HomePage() {
               href={heroStory.href}
               className="card-bold group relative col-span-1 overflow-hidden lg:col-span-3"
             >
-              <div className="gradient-glow flex aspect-[16/9] items-end p-6 md:p-8">
+              <div className="gradient-glow flex aspect-[16/9] items-end p-5 md:p-8">
                 <div className="relative">
-                  <TagBadge tag={heroStory.tag} />
-                  <h1 className="mt-3 text-3xl font-black leading-[1.1] tracking-tight text-white md:text-5xl">
+                  <span className="inline-block rounded-full bg-white/20 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                    {heroStory.tag}
+                  </span>
+                  <h1 className="mt-3 text-2xl font-black leading-[1.1] tracking-tight text-white sm:text-3xl md:text-5xl">
                     {heroStory.title}
                   </h1>
-                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/60 md:text-base">
+                  <p className="mt-2 max-w-lg text-sm leading-relaxed text-white/60 md:mt-3 md:text-base">
                     {heroStory.excerpt}
                   </p>
-                  <div className="mt-4 flex items-center gap-4">
-                    <ReadCount count={heroStory.reads} />
+                  <div className="mt-3 flex items-center gap-4 md:mt-4">
+                    <ReadCount count={heroStory.reads} light />
                     <span className="text-xs text-white/40">{heroStory.time}</span>
                   </div>
                 </div>
@@ -249,15 +163,15 @@ export default function HomePage() {
                 <Link
                   key={story.title}
                   href={story.href}
-                  className="card-bold group flex-1 p-5"
+                  className="card-bold group flex-1 p-4 md:p-5"
                 >
                   <TagBadge tag={story.tag} />
-                  <h3 className="mt-3 text-lg font-bold leading-snug text-neutral-100 group-hover:text-white md:text-xl">
+                  <h3 className="mt-2 text-base font-bold leading-snug text-neutral-900 group-hover:text-accent-green md:mt-3 md:text-lg">
                     {story.title}
                   </h3>
-                  <div className="mt-3 flex items-center gap-3">
+                  <div className="mt-2 flex items-center gap-3 md:mt-3">
                     <ReadCount count={story.reads} />
-                    <span className="text-xs text-neutral-600">{story.time}</span>
+                    <span className="text-xs text-neutral-400">{story.time}</span>
                   </div>
                 </Link>
               ))}
@@ -266,26 +180,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== TODAY'S BREAD — WSJ "What's News" digest ===== */}
-      <section className="py-10 md:py-14">
+      {/* ===== TODAY'S BREAD — WSJ digest ===== */}
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="card-bold p-6 md:p-8">
+          <div className="card-bold p-5 md:p-8">
             <div className="mb-4 flex items-center gap-3">
               <span className="text-lg">🍞</span>
-              <h2 className="text-lg font-black uppercase tracking-wider text-neutral-100">
+              <h2 className="text-base font-black uppercase tracking-wider text-neutral-900 md:text-lg">
                 Today&apos;s Bread
               </h2>
               <div className="divider flex-1" />
-              <span className="text-xs text-neutral-600">Quick scan</span>
+              <span className="text-xs text-neutral-400">Quick scan</span>
             </div>
             <ul className="space-y-3">
               {todaysBread.map((item, i) => (
                 <li key={i}>
                   <Link
                     href="/articles"
-                    className="group flex items-start gap-3 text-sm text-neutral-400 transition-colors hover:text-neutral-100"
+                    className="group flex items-start gap-3 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
                   >
-                    <span className="mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-purple group-hover:bg-brand-pink" />
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-green" />
                     {item}
                   </Link>
                 </li>
@@ -295,26 +209,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== BREAD WINNERS — Horizontal scroll row (Netflix) ===== */}
-      <section className="py-10 md:py-14">
+      {/* ===== BREAD WINNERS — Horizontal scroll (Netflix) ===== */}
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-5 flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-black tracking-tight md:text-3xl">
+              <h2 className="text-xl font-black tracking-tight text-neutral-900 md:text-2xl">
                 <span className="gradient-primary-text">Bread Winners</span>
               </h2>
-              <p className="mt-1 text-sm text-neutral-500">
+              <p className="mt-1 text-xs text-neutral-500 md:text-sm">
                 Young people making real money. Swipe to explore.
               </p>
             </div>
             <Link
               href="/profiles"
-              className="text-sm font-semibold text-brand-purple transition-colors hover:text-brand-pink"
+              className="text-sm font-semibold text-accent-green transition-colors hover:text-accent-emerald"
             >
               All profiles →
             </Link>
           </div>
-          {/* Horizontal scroll — swipe on mobile */}
           <div className="scroll-row">
             {breadWinners.map((person) => (
               <Link
@@ -322,12 +235,12 @@ export default function HomePage() {
                 href={person.href}
                 className="card-bold swipe-card group overflow-hidden"
               >
-                <div className="gradient-glow flex aspect-[4/3] items-end p-5">
+                <div className="gradient-glow flex aspect-[4/3] items-end p-4 md:p-5">
                   <div>
                     <div className="text-[11px] font-semibold uppercase tracking-wider text-white/50">
                       Age {person.age} · {person.platform}
                     </div>
-                    <div className="mt-1 text-xl font-black text-white">
+                    <div className="mt-1 text-lg font-black text-white md:text-xl">
                       {person.name}
                     </div>
                     <div className="text-sm text-white/70">{person.title}</div>
@@ -335,16 +248,16 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center justify-between p-4">
                   <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-500">
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-400">
                       Earning
                     </div>
-                    <div className="text-lg font-black text-accent-cyan">
+                    <div className="text-lg font-black text-accent-green">
                       {person.stat}
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <ReadCount count={person.reads} />
-                    <span className="text-xs font-semibold text-brand-purple group-hover:text-brand-pink">
+                    <span className="text-xs font-semibold text-accent-green">
                       Read story →
                     </span>
                   </div>
@@ -355,16 +268,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== MONEY MOVES — Horizontal scroll row ===== */}
-      <section className="py-10 md:py-14">
+      {/* ===== MONEY MOVES — Horizontal scroll ===== */}
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-black tracking-tight md:text-3xl">
+          <div className="mb-5 flex items-center justify-between">
+            <h2 className="text-xl font-black tracking-tight text-neutral-900 md:text-2xl">
               Money Moves
             </h2>
             <Link
               href="/articles?type=money-moves"
-              className="text-sm font-semibold text-brand-purple transition-colors hover:text-brand-pink"
+              className="text-sm font-semibold text-accent-green transition-colors hover:text-accent-emerald"
             >
               All guides →
             </Link>
@@ -374,16 +287,16 @@ export default function HomePage() {
               <Link
                 key={story.title}
                 href={story.href}
-                className="card-bold swipe-card group p-5"
+                className="card-bold swipe-card group p-4 md:p-5"
               >
                 <TagBadge tag={story.tag} />
-                <h3 className="mt-3 text-base font-bold leading-snug text-neutral-100 group-hover:text-white">
+                <h3 className="mt-2 text-sm font-bold leading-snug text-neutral-900 group-hover:text-accent-green md:mt-3 md:text-base">
                   {story.title}
                 </h3>
                 <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-neutral-500">
                   {story.excerpt}
                 </p>
-                <div className="mt-4">
+                <div className="mt-3">
                   <ReadCount count={story.reads} />
                 </div>
               </Link>
@@ -392,16 +305,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== SIDE HUSTLE PLAYBOOKS — Compact row ===== */}
-      <section className="py-10 md:py-14">
+      {/* ===== SIDE HUSTLE PLAYBOOKS ===== */}
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-black tracking-tight md:text-3xl">
+          <div className="mb-5 flex items-center justify-between">
+            <h2 className="text-xl font-black tracking-tight text-neutral-900 md:text-2xl">
               Side Hustle Playbooks
             </h2>
             <Link
               href="/articles?type=side-hustle-lab"
-              className="text-sm font-semibold text-brand-purple transition-colors hover:text-brand-pink"
+              className="text-sm font-semibold text-accent-green transition-colors hover:text-accent-emerald"
             >
               All playbooks →
             </Link>
@@ -411,26 +324,26 @@ export default function HomePage() {
               <Link
                 key={hustle.title}
                 href={hustle.href}
-                className="card-bold swipe-card group p-5"
+                className="card-bold swipe-card group p-4 md:p-5"
               >
-                <h3 className="text-base font-bold text-neutral-100 group-hover:text-white">
+                <h3 className="text-sm font-bold text-neutral-900 group-hover:text-accent-green md:text-base">
                   {hustle.title}
                 </h3>
-                <div className="mt-3 flex gap-3">
-                  <div className="rounded-lg bg-neutral-800/80 px-2.5 py-1.5">
-                    <div className="text-[10px] text-neutral-500">Income</div>
-                    <div className="text-sm font-bold text-accent-cyan">
+                <div className="mt-3 flex gap-2">
+                  <div className="rounded-lg bg-neutral-50 px-2.5 py-1.5">
+                    <div className="text-[10px] text-neutral-400">Income</div>
+                    <div className="text-sm font-bold text-accent-green">
                       {hustle.income}
                     </div>
                   </div>
-                  <div className="rounded-lg bg-neutral-800/80 px-2.5 py-1.5">
-                    <div className="text-[10px] text-neutral-500">First $</div>
+                  <div className="rounded-lg bg-neutral-50 px-2.5 py-1.5">
+                    <div className="text-[10px] text-neutral-400">First $</div>
                     <div className="text-sm font-bold text-accent-gold">
                       {hustle.time}
                     </div>
                   </div>
                 </div>
-                <div className="mt-4 text-xs font-semibold text-brand-purple group-hover:text-brand-pink">
+                <div className="mt-3 text-xs font-semibold text-accent-green">
                   Read playbook →
                 </div>
               </Link>
@@ -440,12 +353,12 @@ export default function HomePage() {
       </section>
 
       {/* ===== TRENDING + SIDEBAR ===== */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-6 lg:grid-cols-3">
             {/* Trending — 2/3 */}
             <div className="lg:col-span-2">
-              <h2 className="mb-6 text-2xl font-black tracking-tight md:text-3xl">
+              <h2 className="mb-6 text-xl font-black tracking-tight text-neutral-900 md:text-2xl">
                 Trending
               </h2>
               <div className="space-y-0">
@@ -453,16 +366,16 @@ export default function HomePage() {
                   <Link
                     key={story.title}
                     href={story.href}
-                    className="group flex items-start gap-5 border-b border-neutral-800/50 py-5 transition-colors first:pt-0 last:border-0"
+                    className="group flex items-start gap-4 border-b border-neutral-100 py-4 transition-colors first:pt-0 last:border-0 md:gap-5 md:py-5"
                   >
                     <span className="trending-num flex-shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <div className="flex-1">
-                      <h3 className="text-base font-bold leading-snug text-neutral-300 group-hover:text-white md:text-lg">
+                      <h3 className="text-sm font-bold leading-snug text-neutral-700 group-hover:text-neutral-900 md:text-base">
                         {story.title}
                       </h3>
-                      <div className="mt-2">
+                      <div className="mt-1.5">
                         <ReadCount count={story.reads} />
                       </div>
                     </div>
@@ -473,12 +386,12 @@ export default function HomePage() {
 
             {/* Sidebar — 1/3 */}
             <div className="space-y-4">
-              {/* Newsletter — Morning Brew minimal capture */}
-              <div className="card-bold p-6">
-                <h3 className="text-lg font-black">
+              {/* Newsletter */}
+              <div className="card-bold p-5 md:p-6">
+                <h3 className="text-base font-black text-neutral-900 md:text-lg">
                   <span className="gradient-primary-text">The Weekly Bread</span>
                 </h3>
-                <p className="mt-2 text-sm text-neutral-400">
+                <p className="mt-2 text-sm text-neutral-500">
                   Get smarter about your bread in 5 min/week. Real stories, real
                   numbers, zero fluff.
                 </p>
@@ -486,20 +399,20 @@ export default function HomePage() {
                   <input
                     type="email"
                     placeholder="your@email.com"
-                    className="w-full rounded-xl border border-neutral-700 bg-neutral-800/50 px-4 py-3 text-sm text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-brand-purple"
+                    className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-accent-green"
                   />
                   <button type="submit" className="btn-primary w-full text-sm">
                     Subscribe — It&apos;s Free
                   </button>
                 </form>
-                <p className="mt-3 text-[11px] text-neutral-600">
+                <p className="mt-3 text-[11px] text-neutral-400">
                   Join 1,000+ young people leveling up weekly.
                 </p>
               </div>
 
-              {/* Quick Tools — compact sidebar widget */}
-              <div className="card-bold p-5">
-                <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-neutral-500">
+              {/* Quick Tools */}
+              <div className="card-bold p-4 md:p-5">
+                <h3 className="mb-3 text-xs font-bold uppercase tracking-wider text-neutral-400">
                   Quick Tools
                 </h3>
                 <div className="space-y-1">
@@ -511,10 +424,10 @@ export default function HomePage() {
                     <Link
                       key={tool.name}
                       href={tool.href}
-                      className="flex items-center gap-3 rounded-lg p-2.5 transition-colors hover:bg-neutral-800/50"
+                      className="flex items-center gap-3 rounded-lg p-2.5 transition-colors hover:bg-neutral-50"
                     >
                       <span className="text-lg">{tool.icon}</span>
-                      <span className="text-sm font-medium text-neutral-300">
+                      <span className="text-sm font-medium text-neutral-600">
                         {tool.name}
                       </span>
                     </Link>
@@ -527,17 +440,17 @@ export default function HomePage() {
       </section>
 
       {/* ===== BOTTOM CTA ===== */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="relative overflow-hidden rounded-3xl gradient-glow p-10 text-center md:p-16">
+          <div className="relative overflow-hidden rounded-3xl gradient-glow p-8 text-center md:p-16">
             <div className="relative">
-              <h2 className="mx-auto max-w-2xl text-3xl font-black text-white md:text-5xl">
+              <h2 className="mx-auto max-w-2xl text-2xl font-black text-white md:text-5xl">
                 Your money education starts here.
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-base text-white/60">
+              <p className="mx-auto mt-3 max-w-lg text-sm text-white/60 md:mt-4 md:text-base">
                 Real stories from young money-makers, delivered weekly.
               </p>
-              <form className="mx-auto mt-8 flex max-w-md gap-2">
+              <form className="mx-auto mt-6 flex max-w-md flex-col gap-2 sm:flex-row md:mt-8">
                 <input
                   type="email"
                   placeholder="your@email.com"
@@ -545,7 +458,7 @@ export default function HomePage() {
                 />
                 <button
                   type="submit"
-                  className="rounded-xl bg-white px-6 py-3 text-sm font-bold text-neutral-950 transition-all hover:bg-neutral-100"
+                  className="rounded-xl bg-white px-6 py-3 text-sm font-bold text-neutral-900 transition-all hover:bg-neutral-100"
                 >
                   Subscribe
                 </button>

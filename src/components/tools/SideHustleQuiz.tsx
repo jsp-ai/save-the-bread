@@ -196,7 +196,7 @@ export function SideHustleQuiz() {
             <div className="flex flex-wrap gap-3">
               <div className="rounded-lg border border-neutral-700 px-3 py-1.5">
                 <div className="text-xs text-neutral-500">Income</div>
-                <div className="text-sm font-bold text-accent-cyan">
+                <div className="text-sm font-bold text-accent-green">
                   {result.income}
                 </div>
               </div>
@@ -208,7 +208,7 @@ export function SideHustleQuiz() {
               </div>
               <div className="rounded-lg border border-neutral-700 px-3 py-1.5">
                 <div className="text-xs text-neutral-500">Startup Cost</div>
-                <div className="text-sm font-bold text-brand-pink">
+                <div className="text-sm font-bold text-accent-gold">
                   {result.startupCost}
                 </div>
               </div>

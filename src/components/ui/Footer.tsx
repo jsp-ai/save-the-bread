@@ -21,25 +21,23 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-800/50 bg-neutral-950">
-      <div className="mx-auto max-w-7xl px-4 py-16">
+    <footer className="border-t border-neutral-200 bg-neutral-50">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
         {/* Newsletter CTA */}
-        <div className="mb-16 rounded-2xl border border-neutral-800/50 bg-neutral-900/50 p-8 text-center md:p-12">
-          <h3 className="mb-3 text-2xl font-bold md:text-3xl">
-            <span className="gradient-primary-text">
-              Get smarter with your money.
-            </span>{" "}
-            Weekly.
+        <div className="mb-12 rounded-2xl border border-neutral-200 bg-white p-6 text-center md:mb-16 md:p-12">
+          <h3 className="mb-3 text-xl font-black text-neutral-900 md:text-3xl">
+            Get smarter with your money.{" "}
+            <span className="gradient-primary-text">Weekly.</span>
           </h3>
-          <p className="mx-auto mb-6 max-w-md text-neutral-400">
+          <p className="mx-auto mb-6 max-w-md text-sm text-neutral-500 md:text-base">
             Real stories, real numbers, and tools that actually help. No spam, no
             fluff.
           </p>
-          <form className="mx-auto flex max-w-md gap-2">
+          <form className="mx-auto flex max-w-md flex-col gap-2 sm:flex-row">
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 rounded-xl border border-neutral-700 bg-neutral-800/50 px-4 py-3 text-sm text-neutral-100 placeholder-neutral-500 outline-none transition-colors focus:border-brand-purple"
+              className="flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-colors focus:border-accent-green"
             />
             <button type="submit" className="btn-primary whitespace-nowrap text-sm">
               Subscribe
@@ -47,14 +45,12 @@ export function Footer() {
           </form>
         </div>
 
-        {/* Links Grid */}
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        {/* Links Grid — stacks to 1 col on mobile */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <span className="text-xl font-black tracking-tight">
-              <span className="gradient-primary-text">SAVE</span>
-              <span className="text-neutral-100">THE</span>
-              <span className="gradient-primary-text">BREAD</span>
+          <div>
+            <span className="text-xl font-black tracking-tight text-neutral-900">
+              SAVE<span className="text-accent-green">THE</span>BREAD
             </span>
             <p className="mt-3 text-sm text-neutral-500">
               Smart money for the next generation.
@@ -63,7 +59,7 @@ export function Footer() {
 
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-500">
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-400">
                 {heading}
               </h4>
               <ul className="space-y-2">
@@ -71,7 +67,7 @@ export function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-400 transition-colors hover:text-neutral-100"
+                      className="text-sm text-neutral-600 transition-colors hover:text-neutral-900"
                     >
                       {link.label}
                     </Link>
@@ -83,7 +79,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-neutral-800/50 pt-8 text-center text-sm text-neutral-600">
+        <div className="mt-12 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-400">
           &copy; {new Date().getFullYear()} Save The Bread. All rights reserved.
         </div>
       </div>

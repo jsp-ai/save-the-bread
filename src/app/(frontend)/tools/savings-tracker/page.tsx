@@ -14,7 +14,7 @@ export default function SavingsTrackerPage() {
           <h1 className="text-3xl font-black md:text-4xl">
             <span className="gradient-primary-text">Savings Goal Tracker</span>
           </h1>
-          <p className="mt-3 text-neutral-400">
+          <p className="mt-3 text-neutral-500">
             Set goals, track progress, and watch your bread grow. Data stays on
             your device.
           </p>

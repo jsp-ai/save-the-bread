@@ -122,7 +122,7 @@ export function SavingsTracker() {
             </div>
 
             {/* Progress Bar */}
-            <div className="mb-2 h-4 overflow-hidden rounded-full bg-neutral-800">
+            <div className="mb-2 h-4 overflow-hidden rounded-full bg-neutral-100">
               <div
                 className="h-full rounded-full gradient-primary transition-all duration-700"
                 style={{ width: `${pct}%` }}
@@ -148,28 +148,28 @@ export function SavingsTracker() {
                   onChange={(e) =>
                     updateCurrent(goal.id, Number(e.target.value))
                   }
-                  className="w-full rounded-lg border border-neutral-700 bg-neutral-800/50 py-2 pl-6 pr-3 text-sm text-neutral-100 outline-none focus:border-brand-purple"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 py-2 pl-6 pr-3 text-sm text-neutral-900 outline-none focus:border-accent-green"
                 />
               </div>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3 text-center">
-              <div className="rounded-lg bg-neutral-800/50 p-2">
+              <div className="rounded-lg bg-neutral-50 p-2">
                 <div className="text-xs text-neutral-500">Progress</div>
                 <div className="font-bold gradient-primary-text">
                   {Math.round(pct)}%
                 </div>
               </div>
-              <div className="rounded-lg bg-neutral-800/50 p-2">
+              <div className="rounded-lg bg-neutral-50 p-2">
                 <div className="text-xs text-neutral-500">Remaining</div>
-                <div className="font-bold text-accent-gold">
+                <div className="font-bold text-accent-amber">
                   {formatCurrency(Math.max(0, goal.target - goal.current))}
                 </div>
               </div>
-              <div className="rounded-lg bg-neutral-800/50 p-2">
+              <div className="rounded-lg bg-neutral-50 p-2">
                 <div className="text-xs text-neutral-500">Months Left</div>
-                <div className="font-bold text-accent-cyan">
+                <div className="font-bold text-accent-green">
                   {months === Infinity
                     ? "--"
                     : months === 0
@@ -181,14 +181,14 @@ export function SavingsTracker() {
 
             {/* What-if slider */}
             {goal.monthlyContribution > 0 && months > 0 && months < Infinity && (
-              <div className="mt-4 rounded-lg border border-neutral-700/50 bg-neutral-800/20 p-3">
+              <div className="mt-4 rounded-lg border border-neutral-200/50 bg-neutral-100/20 p-3">
                 <p className="text-xs text-neutral-400">
                   Saving{" "}
                   <span className="font-bold text-neutral-200">
                     {formatCurrency(goal.monthlyContribution + 50)}
                   </span>
                   /mo instead? You&apos;d finish{" "}
-                  <span className="font-bold text-accent-cyan">
+                  <span className="font-bold text-accent-green">
                     {Math.max(
                       0,
                       months -
@@ -219,7 +219,7 @@ export function SavingsTracker() {
               onChange={(e) =>
                 setNewGoal({ ...newGoal, name: e.target.value })
               }
-              className="w-full rounded-xl border border-neutral-700 bg-neutral-800/50 px-4 py-3 text-neutral-100 placeholder-neutral-500 outline-none focus:border-brand-purple"
+              className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-neutral-900 placeholder-neutral-500 outline-none focus:border-accent-green"
             />
             <div className="grid grid-cols-3 gap-3">
               <div>
@@ -235,7 +235,7 @@ export function SavingsTracker() {
                       setNewGoal({ ...newGoal, target: Number(e.target.value) })
                     }
                     placeholder="0"
-                    className="w-full rounded-lg border border-neutral-700 bg-neutral-800/50 py-2 pl-6 pr-2 text-sm text-neutral-100 outline-none focus:border-brand-purple"
+                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 py-2 pl-6 pr-2 text-sm text-neutral-900 outline-none focus:border-accent-green"
                   />
                 </div>
               </div>
@@ -252,7 +252,7 @@ export function SavingsTracker() {
                       setNewGoal({ ...newGoal, current: Number(e.target.value) })
                     }
                     placeholder="0"
-                    className="w-full rounded-lg border border-neutral-700 bg-neutral-800/50 py-2 pl-6 pr-2 text-sm text-neutral-100 outline-none focus:border-brand-purple"
+                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 py-2 pl-6 pr-2 text-sm text-neutral-900 outline-none focus:border-accent-green"
                   />
                 </div>
               </div>
@@ -272,7 +272,7 @@ export function SavingsTracker() {
                       })
                     }
                     placeholder="0"
-                    className="w-full rounded-lg border border-neutral-700 bg-neutral-800/50 py-2 pl-6 pr-2 text-sm text-neutral-100 outline-none focus:border-brand-purple"
+                    className="w-full rounded-lg border border-neutral-200 bg-neutral-50 py-2 pl-6 pr-2 text-sm text-neutral-900 outline-none focus:border-accent-green"
                   />
                 </div>
               </div>
@@ -293,7 +293,7 @@ export function SavingsTracker() {
       ) : (
         <button
           onClick={() => setShowAdd(true)}
-          className="card-glass flex w-full items-center justify-center gap-2 p-6 text-neutral-400 transition-all hover:border-brand-purple/30 hover:text-neutral-100"
+          className="card-glass flex w-full items-center justify-center gap-2 p-6 text-neutral-400 transition-all hover:border-accent-green/30 hover:text-neutral-900"
         >
           <svg
             width="20"

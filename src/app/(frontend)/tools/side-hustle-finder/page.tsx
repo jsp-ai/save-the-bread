@@ -14,7 +14,7 @@ export default function SideHustleFinderPage() {
           <h1 className="text-3xl font-black md:text-4xl">
             <span className="gradient-primary-text">Side Hustle Finder</span>
           </h1>
-          <p className="mt-3 text-neutral-400">
+          <p className="mt-3 text-neutral-500">
             Answer 5 quick questions. We&apos;ll match you with hustles that fit
             your life.
           </p>
