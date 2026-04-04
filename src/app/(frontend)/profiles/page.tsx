@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { profiles } from "@/lib/content";
 
 export const metadata = {
   title: "Bread Winners",
@@ -19,15 +20,48 @@ export default function ProfilesPage() {
           </p>
         </div>
 
-        <div className="card-bold p-8 text-center md:p-12">
-          <div className="mb-4 text-5xl">👤</div>
-          <h3 className="mb-2 text-xl font-bold text-neutral-900">Profiles Coming Soon</h3>
-          <p className="mx-auto max-w-md text-sm text-neutral-500">
-            We&apos;re interviewing our first wave of Bread Winners right now. Real stories, real income breakdowns, real playbooks.
-          </p>
-          <Link href="/newsletter" className="btn-primary mt-6 inline-block text-sm">
-            Be First to Read Them
-          </Link>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {profiles.map((profile) => (
+            <Link
+              key={profile.slug}
+              href={`/profiles/${profile.slug}`}
+              className="card-bold group overflow-hidden"
+            >
+              <div className="gradient-glow flex aspect-[4/3] items-end p-4 md:p-5">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wider text-white/50">
+                    Age {profile.age} · {profile.platform}
+                  </div>
+                  <div className="mt-1 text-lg font-black text-white md:text-xl">
+                    {profile.name}
+                  </div>
+                  <div className="text-sm text-white/70">{profile.title}</div>
+                </div>
+              </div>
+              <div className="p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-400">
+                      Earning
+                    </div>
+                    <div className="text-lg font-black text-accent-green">
+                      {profile.stat}
+                    </div>
+                  </div>
+                  <span className="proof-badge">
+                    <span className="dot" />
+                    {profile.reads} reads
+                  </span>
+                </div>
+                <p className="mt-3 line-clamp-2 text-xs text-neutral-500">
+                  {profile.excerpt}
+                </p>
+                <div className="mt-3 text-xs font-semibold text-accent-green">
+                  Read full story →
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

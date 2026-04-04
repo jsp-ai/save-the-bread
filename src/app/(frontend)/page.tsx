@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { articles, profiles } from "@/lib/content";
 
-// --- PLACEHOLDER DATA (replaced by CMS once content is published) ---
+// --- CONTENT DATA (pulled from lib/content.ts) ---
 
 const categoryChips = [
   { label: "All", value: "all" },
@@ -14,70 +15,71 @@ const categoryChips = [
 ];
 
 const heroStory = {
-  tag: "Bread Winner",
-  title: "She Makes $6K/Month Editing TikToks. Here\u2019s Exactly How.",
-  excerpt:
-    "Maya started editing videos during quarantine because she was bored. Two years later, she edits for four creators full-time and brings in $6,200/month. The first three months? She made nothing.",
-  href: "/profiles",
-  reads: "2.4K",
-  time: "8 min read",
+  tag: articles[0].tag,
+  title: articles[0].title,
+  excerpt: articles[0].excerpt,
+  href: `/articles/${articles[0].slug}`,
+  reads: articles[0].reads,
+  time: articles[0].time,
 };
 
 const sideStories = [
   {
-    tag: "Money Moves",
-    title: "You Just Got Your First Real Paycheck. Here\u2019s What To Do Before You Spend Any of It.",
-    reads: "1.8K",
-    time: "5 min",
-    href: "/articles",
+    tag: articles[1].tag,
+    title: articles[1].title,
+    reads: articles[1].reads,
+    time: articles[1].time,
+    href: `/articles/${articles[1].slug}`,
   },
   {
-    tag: "Side Hustle Lab",
-    title: "The Freelance Video Editing Playbook: Zero Clients to Booked Out",
-    reads: "3.1K",
-    time: "12 min",
-    href: "/articles",
+    tag: articles[2].tag,
+    title: articles[2].title,
+    reads: articles[2].reads,
+    time: articles[2].time,
+    href: `/articles/${articles[2].slug}`,
   },
 ];
 
 const todaysBread = [
-  "Roth IRA vs. Savings Account: the $200K difference nobody showed you",
-  "Best free budgeting apps \u2014 we tested all of them",
-  "Your landlord doesn\u2019t care about your credit score. Your next one will.",
-  "How to start tutoring online this weekend and make $30-50/hr",
-  "The real cost of \u2018free\u2019 buy now pay later apps",
+  { text: "Roth IRA vs. Savings Account: the $200K difference nobody showed you", slug: "roth-ira-vs-savings-200k-difference" },
+  { text: "Best free budgeting apps \u2014 we tested all of them", slug: "best-budgeting-apps-tested" },
+  { text: "If you don\u2019t know your credit score, your landlord does", slug: "credit-score-101" },
+  { text: "How to start tutoring online this weekend and make $30-50/hr", slug: "side-hustle-online-tutoring" },
+  { text: "Buy Now Pay Later is free money the same way a mousetrap is free cheese", slug: "buy-now-pay-later-trap" },
 ];
 
-const breadWinners = [
-  { name: "Maya Chen", title: "Freelance Video Editor", stat: "$6.2K/mo", age: 24, platform: "TikTok", href: "/profiles", reads: "2.4K" },
-  { name: "DeShawn Williams", title: "Sneaker Reseller \u2192 Brand Owner", stat: "$120K/yr", age: 22, platform: "eBay \u2192 Shopify", href: "/profiles", reads: "4.1K" },
-  { name: "Priya Patel", title: "UGC Content Creator", stat: "$4.8K/mo", age: 21, platform: "Instagram", href: "/profiles", reads: "1.9K" },
-  { name: "Marcus Rivera", title: "Online Math Tutor", stat: "$3.5K/mo", age: 20, platform: "Wyzant", href: "/profiles", reads: "1.2K" },
-];
+const breadWinners = profiles.map((p) => ({
+  name: p.name,
+  title: p.title,
+  stat: p.stat,
+  age: p.age,
+  platform: p.platform,
+  href: `/profiles/${p.slug}`,
+  reads: p.reads,
+}));
 
-const moneyMoves = [
-  { tag: "First Paycheck", title: "The First 48 Hours After Your First Direct Deposit Matter More Than You Think", excerpt: "Set up these 3 things before you touch a dollar.", reads: "1.8K", href: "/articles" },
-  { tag: "Investing 101", title: "Roth IRA vs. Savings Account: The $200K Difference Nobody Showed You", excerpt: "Same money, wildly different outcomes. Here\u2019s the math.", reads: "5.2K", href: "/articles" },
-  { tag: "Debt Escape", title: "Credit Score 101: The Number That Controls Your Rent, Car, and Phone Plan", excerpt: "It doesn\u2019t measure responsibility. It measures profitability to lenders.", reads: "3.7K", href: "/articles" },
-  { tag: "Moving Out", title: "The Real Monthly Cost of Living Alone at 22 (We Did the Math)", excerpt: "Rent is the headline. Everything else is the fine print.", reads: "2.9K", href: "/articles" },
-  { tag: "Saving", title: "The $200 Emergency Fund That Saved My Apartment", excerpt: "You don\u2019t need $10K. You need enough to survive one bad week.", reads: "4.4K", href: "/articles" },
-];
+const moneyMoves = articles.slice(3, 8).map((a) => ({
+  tag: a.tag,
+  title: a.title,
+  excerpt: a.excerpt,
+  reads: a.reads,
+  href: `/articles/${a.slug}`,
+}));
 
-const sideHustles = [
-  { title: "Freelance Video Editing", income: "$2-6K/mo", time: "2-4 weeks to first $", href: "/articles" },
-  { title: "UGC Content Creation", income: "$1-5K/mo", time: "1-3 weeks to first $", href: "/articles" },
-  { title: "Online Tutoring", income: "$1.5-4K/mo", time: "1 week to first $", href: "/articles" },
-  { title: "Local Service Business", income: "$2-10K/mo", time: "1-2 weeks to first $", href: "/articles" },
-  { title: "Social Media Management", income: "$1.5-5K/mo", time: "1-3 weeks to first $", href: "/articles" },
+const sideHustleData = [
+  { slug: "freelance-video-editing-playbook", title: "Freelance Video Editing", income: "$2-6K/mo", time: "2-4 weeks to first $" },
+  { slug: "side-hustle-ugc-content", title: "UGC Content Creation", income: "$1-5K/mo", time: "1-3 weeks to first $" },
+  { slug: "side-hustle-online-tutoring", title: "Online Tutoring", income: "$1.5-4K/mo", time: "1 week to first $" },
+  { slug: "side-hustle-local-service", title: "Local Service Business", income: "$2-10K/mo", time: "1-2 weeks to first $" },
+  { slug: "side-hustle-social-media-management", title: "Social Media Management", income: "$1.5-5K/mo", time: "1-3 weeks to first $" },
 ];
+const sideHustles = sideHustleData.map((h) => ({ ...h, href: `/articles/${h.slug}` }));
 
-const trending = [
-  { title: "Stop Googling \u2018How to Invest\u2019 and Read This Instead", href: "/articles", reads: "6.1K" },
-  { title: "He Dropped Out of CS to Build a Shopify App. Here\u2019s His P&L.", href: "/profiles", reads: "4.8K" },
-  { title: "The Real Cost of \u2018Free\u2019 Buy Now Pay Later Apps", href: "/articles", reads: "3.9K" },
-  { title: "She Started a Cleaning Business at 19. Now She Employs 6 People.", href: "/profiles", reads: "3.2K" },
-  { title: "Best Online Courses for Learning to Invest \u2014 Ranked by Actual Value", href: "/resources", reads: "2.7K" },
-];
+const trending = articles.slice(13, 18).map((a) => ({
+  title: a.title,
+  href: `/articles/${a.slug}`,
+  reads: a.reads,
+}));
 
 // --- COMPONENTS ---
 
@@ -196,11 +198,11 @@ export default function HomePage() {
               {todaysBread.map((item, i) => (
                 <li key={i}>
                   <Link
-                    href="/articles"
+                    href={`/articles/${item.slug}`}
                     className="group flex items-start gap-3 text-sm text-neutral-600 transition-colors hover:text-neutral-900"
                   >
                     <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-green" />
-                    {item}
+                    {item.text}
                   </Link>
                 </li>
               ))}
