@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/lib/content";
+import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://savethebread.com";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,6 +20,23 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: article.title,
     description: article.excerpt,
+    keywords: [article.tag, "Gen Z finance", "money", "personal finance"],
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: `${BASE_URL}/articles/${article.slug}`,
+      type: "article",
+      siteName: "Save The Bread",
+      section: article.tag,
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: article.title,
+      description: article.excerpt,
+    },
+    alternates: {
+      canonical: `${BASE_URL}/articles/${article.slug}`,
+    },
   };
 }
 
@@ -27,10 +47,18 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <div className="pt-24 pb-20">
-      <div className="mx-auto max-w-3xl px-4">
+      <ArticleJsonLd article={article} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: BASE_URL },
+          { name: "Articles", url: `${BASE_URL}/articles` },
+          { name: article.title, url: `${BASE_URL}/articles/${article.slug}` },
+        ]}
+      />
+      <div className="mx-auto max-w-2xl px-5 md:px-8">
         {/* Header */}
-        <div className="mb-8">
-          <div className="mb-4 flex items-center gap-3">
+        <div className="mb-6">
+          <div className="mb-4 flex flex-wrap items-center gap-3">
             <span className="inline-block rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-neutral-500">
               {article.tag}
             </span>
@@ -40,24 +68,31 @@ export default async function ArticlePage({ params }: Props) {
               {article.reads} reads
             </span>
           </div>
-          <h1 className="text-3xl font-black leading-[1.15] tracking-tight text-neutral-900 md:text-5xl">
+          <h1 className="text-3xl font-black leading-[1.08] tracking-[-0.03em] text-neutral-900 md:text-[2.75rem]">
             {article.title}
           </h1>
-          <p className="mt-4 text-lg text-neutral-500">{article.excerpt}</p>
+          <p className="mt-4 text-base leading-relaxed text-neutral-500 md:text-lg">{article.excerpt}</p>
+        </div>
+
+        {/* Byline */}
+        <div className="article-byline">
+          <span className="font-semibold text-neutral-900">Save The Bread</span>
+          <span className="text-neutral-300">|</span>
+          <span>April 2026</span>
         </div>
 
         {/* Hero Image */}
-        <div className="mb-10 aspect-[16/9] overflow-hidden rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-200">
+        <div className="mb-8 aspect-[16/9] overflow-hidden rounded-xl bg-gradient-to-br from-neutral-100 to-neutral-200 md:mb-10">
           {article.imagePrompt && (
-            <div className="flex h-full items-center justify-center p-8 text-center text-sm text-neutral-400">
+            <div className="flex h-full items-center justify-center p-6 text-center text-xs text-neutral-400">
               {article.imagePrompt}
             </div>
           )}
         </div>
 
-        {/* Article Body */}
+        {/* Article Body — Editorial formatting */}
         <div
-          className="prose prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tight prose-headings:text-neutral-900 prose-p:text-neutral-600 prose-p:leading-relaxed prose-strong:text-neutral-900 prose-li:text-neutral-600 prose-a:text-accent-green prose-a:no-underline hover:prose-a:underline"
+          className="article-body"
           dangerouslySetInnerHTML={{ __html: article.body }}
         />
 

@@ -255,6 +255,201 @@ body {
   background: var(--color-neutral-200);
 }
 
+/* ===== ARTICLE BODY — Editorial formatting (Elite Daily + BR) ===== */
+
+.article-body {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-neutral-700);
+}
+
+@media (min-width: 768px) {
+  .article-body {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+.article-body p {
+  margin-bottom: 1.5em;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-neutral-900);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  padding-top: 1em;
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+@media (min-width: 768px) {
+  .article-body h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.article-body h3 {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--color-neutral-900);
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.article-body strong {
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.article-body em {
+  font-style: italic;
+  color: var(--color-neutral-600);
+}
+
+.article-body a {
+  color: var(--color-accent-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.article-body a:hover {
+  color: var(--color-accent-emerald);
+}
+
+/* Lists — clean, editorial */
+.article-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+}
+
+.article-body ul li {
+  position: relative;
+  padding-left: 1.25em;
+  margin-bottom: 0.75em;
+  line-height: 1.65;
+}
+
+.article-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-green);
+}
+
+.article-body ol {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+  counter-reset: article-counter;
+}
+
+.article-body ol li {
+  position: relative;
+  padding-left: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.65;
+  counter-increment: article-counter;
+}
+
+.article-body ol li::before {
+  content: counter(article-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--color-accent-green);
+  width: 1.5em;
+  text-align: center;
+}
+
+/* Pull quote — Elite Daily inspired */
+.article-body blockquote,
+.pull-quote {
+  position: relative;
+  margin: 2.5em 0;
+  padding: 1.5em 0;
+  border-top: 2px solid var(--color-neutral-900);
+  border-bottom: 2px solid var(--color-neutral-900);
+  font-size: 1.375rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-neutral-900);
+  text-indent: 10%;
+}
+
+@media (min-width: 768px) {
+  .article-body blockquote,
+  .pull-quote {
+    font-size: 1.75rem;
+    margin: 3em 0;
+    padding: 2em 0;
+    text-indent: 15%;
+  }
+}
+
+.article-body blockquote::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-accent-green);
+  font-weight: 900;
+}
+
+/* Inline callout box */
+.callout {
+  margin: 2em 0;
+  padding: 1.25em 1.5em;
+  background: var(--color-neutral-50);
+  border-left: 3px solid var(--color-accent-green);
+  border-radius: 0 12px 12px 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-neutral-700);
+}
+
+.callout strong {
+  color: var(--color-neutral-900);
+}
+
+/* Article byline */
+.article-byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-neutral-200);
+  margin-bottom: 2em;
+  font-size: 0.875rem;
+  color: var(--color-neutral-500);
+}
+
+/* Image caption — editorial miniaturized */
+.img-caption {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-neutral-400);
+  margin-top: 0.5em;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

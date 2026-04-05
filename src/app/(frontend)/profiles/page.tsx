@@ -2,8 +2,21 @@ import Link from "next/link";
 import { profiles } from "@/lib/content";
 
 export const metadata = {
-  title: "Bread Winners",
-  description: "Real profiles of young people making real money. Their stories, their numbers, their playbooks.",
+  title: "Bread Winners — Young People Making Real Money",
+  description: "Real profiles of young people making real money. Verified income breakdowns, exact workflows, and key takeaways from Gen Z creators, entrepreneurs, and freelancers.",
+  keywords: ["young entrepreneurs", "Gen Z income", "creator economy", "side hustle profiles", "real income breakdowns"],
+  openGraph: {
+    title: "Bread Winners — Young People Making Real Money",
+    description: "Real profiles of young people making real money. Their stories, their numbers, their playbooks.",
+    url: "https://savethebread.com/profiles",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "Bread Winners | Save The Bread",
+    description: "Real profiles of young people making real money.",
+  },
+  alternates: { canonical: "https://savethebread.com/profiles" },
 };
 
 export default function ProfilesPage() {

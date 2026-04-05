@@ -1,8 +1,21 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "The Toolkit",
-  description: "Honest reviews of financial apps, tools, courses, and resources.",
+  title: "The Toolkit — Financial Apps, Tools & Resources",
+  description: "Honest reviews of financial apps, tools, courses, and resources for young adults. No sponsorship bias — if it sucks, we say so.",
+  keywords: ["financial apps", "money tools", "budgeting apps", "investing apps", "financial resources"],
+  openGraph: {
+    title: "The Toolkit — Financial Apps, Tools & Resources",
+    description: "Honest reviews of financial apps, tools, courses, and resources.",
+    url: "https://savethebread.com/resources",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "The Toolkit | Save The Bread",
+    description: "Honest reviews of financial apps, tools, courses, and resources.",
+  },
+  alternates: { canonical: "https://savethebread.com/resources" },
 };
 
 export default function ResourcesPage() {

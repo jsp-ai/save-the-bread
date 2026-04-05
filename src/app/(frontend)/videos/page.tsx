@@ -1,8 +1,21 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Videos",
-  description: "Short-form financial content, creator spotlights, and money tips.",
+  title: "Videos — Short-Form Money Content",
+  description: "Short-form financial content, creator spotlights, and money tips for Gen Z. Quick, actionable videos on budgeting, side hustles, and building wealth.",
+  keywords: ["money videos", "financial content", "Gen Z finance videos", "money tips"],
+  openGraph: {
+    title: "Videos — Short-Form Money Content",
+    description: "Short-form financial content, creator spotlights, and money tips.",
+    url: "https://savethebread.com/videos",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "Videos | Save The Bread",
+    description: "Short-form financial content, creator spotlights, and money tips.",
+  },
+  alternates: { canonical: "https://savethebread.com/videos" },
 };
 
 export default function VideosPage() {

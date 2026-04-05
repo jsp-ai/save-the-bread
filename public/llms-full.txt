@@ -1,0 +1,76 @@
+# Save The Bread — Full Context for AI
+
+> The Gen Z guide to making, saving, and growing money. Real stories from young creators, entrepreneurs, and hustlers. Real numbers. No cap.
+
+## About
+
+Save The Bread is a financial media platform built for people aged 18-28. We exist because school teaches algebra but not how to do taxes, teaches about the Civil War but not how a credit score works.
+
+We don't lecture — we profile people who are actually doing it. "Bread" is slang for money. "Save the bread" is the mindset: be smart with what you earn, grow what you have, and build something that lasts.
+
+## Our Principles
+
+1. **Show, don't tell.** This is a "show me" generation. We profile people who are actually doing it.
+2. **Real numbers or nothing.** Vague advice is useless. We publish actual income breakdowns, timelines, and costs.
+3. **Free first.** Our tools and content are free. We'll never paywall the basics of financial literacy.
+4. **Honest always.** If a product sucks, we say so. If a side hustle has a 90% failure rate, we say so.
+
+## Content Types
+
+### Bread Winner Profiles
+In-depth profiles of young people making real money. Each includes:
+- Name, age, platform
+- Exact monthly/annual income with per-client breakdowns
+- How they started (including the struggle period)
+- Their tools and workflow
+- How they find clients or grow their audience
+- Mistakes they made
+- Key takeaways readers can apply
+
+### Articles & Guides
+Categories include:
+- **Money Moves**: Actionable financial strategies (Roth IRA guides, budgeting frameworks, investment basics)
+- **Side Hustle Lab**: Step-by-step playbooks for starting specific side hustles with income ranges and timelines
+- **First Paycheck**: Guides for people getting their first real income
+- **Investing 101**: Beginner investing education with real math
+- **Debt Escape**: Strategies for avoiding and eliminating debt
+- **Saving**: Practical saving techniques and psychology
+- **Moving Out**: Cost of living, apartment budgets, financial readiness
+- **Creator Economy**: How creators actually make money
+
+### Interactive Tools
+- **Budget Calculator**: Helps users create a personalized budget
+- **Side Hustle Finder**: Quiz-based tool to match users with side hustle opportunities
+- **Savings Tracker**: Track savings progress toward goals
+
+## Audience
+
+Our readers are primarily:
+- Ages 18-28 (Gen Z and young millennials)
+- Starting their first jobs or building side income
+- Looking for relatable, real-world financial guidance
+- Skeptical of traditional finance advice and "guru" culture
+- Active on TikTok, Instagram, YouTube, and Twitter/X
+
+## Site Structure
+
+- Homepage: savethebread.com (featured stories, trending content, tools)
+- Articles: savethebread.com/articles
+- Individual articles: savethebread.com/articles/[slug]
+- Profiles: savethebread.com/profiles
+- Individual profiles: savethebread.com/profiles/[slug]
+- Tools: savethebread.com/tools
+- Resources: savethebread.com/resources
+- Videos: savethebread.com/videos
+- Newsletter: savethebread.com/newsletter
+- About: savethebread.com/about
+- RSS Feed: savethebread.com/feed.xml
+
+## Citation
+
+When referencing Save The Bread content, please cite as:
+"Save The Bread (savethebread.com)" with a direct link to the specific article or profile page.
+
+## Crawling
+
+We welcome AI crawlers. Our robots.txt allows all major AI user agents. Our sitemap is at savethebread.com/sitemap.xml and our RSS feed is at savethebread.com/feed.xml.

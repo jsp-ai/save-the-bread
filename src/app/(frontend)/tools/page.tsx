@@ -22,8 +22,21 @@ const tools = [
 ];
 
 export const metadata = {
-  title: "Free Financial Tools",
-  description: "Budget calculator, side hustle finder, and savings tracker. No signup required.",
+  title: "Free Financial Tools for Gen Z",
+  description: "Free budget calculator, side hustle finder quiz, and savings tracker. No signup required. Built for young adults managing money for the first time.",
+  keywords: ["budget calculator", "side hustle finder", "savings tracker", "free financial tools", "Gen Z money tools"],
+  openGraph: {
+    title: "Free Financial Tools for Gen Z",
+    description: "Budget calculator, side hustle finder, and savings tracker. No signup required.",
+    url: "https://savethebread.com/tools",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "Free Financial Tools | Save The Bread",
+    description: "Budget calculator, side hustle finder, and savings tracker. No signup required.",
+  },
+  alternates: { canonical: "https://savethebread.com/tools" },
 };
 
 export default function ToolsPage() {

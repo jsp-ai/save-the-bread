@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { profiles } from "@/lib/content";
+import { ProfileJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://savethebread.com";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,6 +20,29 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${profile.name} — ${profile.title}`,
     description: profile.excerpt,
+    keywords: [
+      profile.name,
+      profile.title,
+      profile.platform,
+      "Bread Winner",
+      "young entrepreneur",
+      "Gen Z",
+    ],
+    openGraph: {
+      title: `${profile.name} — ${profile.title}`,
+      description: profile.excerpt,
+      url: `${BASE_URL}/profiles/${profile.slug}`,
+      type: "profile",
+      siteName: "Save The Bread",
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: `${profile.name} — ${profile.title}`,
+      description: profile.excerpt,
+    },
+    alternates: {
+      canonical: `${BASE_URL}/profiles/${profile.slug}`,
+    },
   };
 }
 
@@ -27,19 +53,37 @@ export default async function ProfilePage({ params }: Props) {
 
   return (
     <div className="pt-24 pb-20">
-      <div className="mx-auto max-w-3xl px-4">
+      <ProfileJsonLd profile={profile} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: BASE_URL },
+          { name: "Bread Winners", url: `${BASE_URL}/profiles` },
+          {
+            name: profile.name,
+            url: `${BASE_URL}/profiles/${profile.slug}`,
+          },
+        ]}
+      />
+      <div className="mx-auto max-w-2xl px-5 md:px-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6">
           <span className="badge-gradient mb-4 inline-block">Bread Winner</span>
-          <h1 className="text-3xl font-black leading-[1.15] tracking-tight text-neutral-900 md:text-5xl">
+          <h1 className="text-3xl font-black leading-[1.08] tracking-[-0.03em] text-neutral-900 md:text-[2.75rem]">
             {profile.headline}
           </h1>
-          <p className="mt-4 text-lg text-neutral-500">{profile.excerpt}</p>
+          <p className="mt-4 text-base leading-relaxed text-neutral-500 md:text-lg">{profile.excerpt}</p>
+        </div>
+
+        {/* Byline */}
+        <div className="article-byline">
+          <span className="font-semibold text-neutral-900">Save The Bread</span>
+          <span className="text-neutral-300">|</span>
+          <span>April 2026</span>
         </div>
 
         {/* Profile Card */}
-        <div className="mb-10 overflow-hidden rounded-2xl border-2 border-neutral-200">
-          <div className="gradient-glow p-6 md:p-8">
+        <div className="mb-8 overflow-hidden rounded-xl border-2 border-neutral-200 md:mb-10">
+          <div className="gradient-glow p-5 md:p-8">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-white/50">
               Age {profile.age} · {profile.platform}
             </div>
@@ -49,24 +93,24 @@ export default async function ProfilePage({ params }: Props) {
             <div className="text-base text-white/70">{profile.title}</div>
           </div>
           <div className="grid grid-cols-3 divide-x divide-neutral-200 bg-white">
-            <div className="p-4 text-center">
-              <div className="text-xs text-neutral-400">Earning</div>
-              <div className="text-lg font-black text-accent-green">{profile.stat}</div>
+            <div className="p-3 text-center md:p-4">
+              <div className="text-[10px] uppercase tracking-wider text-neutral-400">Earning</div>
+              <div className="text-base font-black text-accent-green md:text-lg">{profile.stat}</div>
             </div>
-            <div className="p-4 text-center">
-              <div className="text-xs text-neutral-400">Platform</div>
-              <div className="text-sm font-bold text-neutral-900">{profile.platform}</div>
+            <div className="p-3 text-center md:p-4">
+              <div className="text-[10px] uppercase tracking-wider text-neutral-400">Platform</div>
+              <div className="text-xs font-bold text-neutral-900 md:text-sm">{profile.platform}</div>
             </div>
-            <div className="p-4 text-center">
-              <div className="text-xs text-neutral-400">Age</div>
-              <div className="text-lg font-black text-neutral-900">{profile.age}</div>
+            <div className="p-3 text-center md:p-4">
+              <div className="text-[10px] uppercase tracking-wider text-neutral-400">Age</div>
+              <div className="text-base font-black text-neutral-900 md:text-lg">{profile.age}</div>
             </div>
           </div>
         </div>
 
-        {/* Profile Body */}
+        {/* Profile Body — Editorial formatting */}
         <div
-          className="prose prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tight prose-headings:text-neutral-900 prose-p:text-neutral-600 prose-p:leading-relaxed prose-strong:text-neutral-900 prose-li:text-neutral-600 prose-a:text-accent-green prose-a:no-underline hover:prose-a:underline"
+          className="article-body"
           dangerouslySetInnerHTML={{ __html: profile.body }}
         />
 

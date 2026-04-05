@@ -1,6 +1,19 @@
 export const metadata = {
-  title: "Newsletter",
-  description: "Get smarter with your money. Weekly.",
+  title: "The Weekly Bread — Free Newsletter",
+  description: "Get smarter about your money in 5 minutes a week. Real stories, real numbers, zero fluff. Join 1,000+ young people leveling up their finances weekly.",
+  keywords: ["money newsletter", "financial newsletter", "Gen Z newsletter", "weekly money tips"],
+  openGraph: {
+    title: "The Weekly Bread — Free Newsletter",
+    description: "Get smarter about your money in 5 minutes a week.",
+    url: "https://savethebread.com/newsletter",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "The Weekly Bread Newsletter | Save The Bread",
+    description: "Get smarter about your money in 5 minutes a week.",
+  },
+  alternates: { canonical: "https://savethebread.com/newsletter" },
 };
 
 export default function NewsletterPage() {

@@ -1,8 +1,21 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About",
-  description: "Save The Bread is the Gen Z guide to making, saving, and growing money.",
+  title: "About Save The Bread",
+  description: "Save The Bread is a financial media platform for Gen Z. We profile real young people making real money with verified income breakdowns. Free content, honest reviews, real numbers.",
+  keywords: ["about Save The Bread", "Gen Z financial media", "financial literacy platform"],
+  openGraph: {
+    title: "About Save The Bread",
+    description: "Save The Bread is the Gen Z guide to making, saving, and growing money.",
+    url: "https://savethebread.com/about",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "About | Save The Bread",
+    description: "The Gen Z guide to making, saving, and growing money.",
+  },
+  alternates: { canonical: "https://savethebread.com/about" },
 };
 
 export default function AboutPage() {

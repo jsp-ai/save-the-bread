@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { articles, profiles } from "@/lib/content";
+import { OrganizationJsonLd, WebSiteJsonLd, FAQJsonLd } from "@/components/seo/JsonLd";
 
 // --- CONTENT DATA (pulled from lib/content.ts) ---
 
@@ -115,6 +116,33 @@ function ReadCount({ count, light }: { count: string; light?: boolean }) {
 export default function HomePage() {
   return (
     <>
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
+      <FAQJsonLd
+        faqs={[
+          {
+            question: "What is Save The Bread?",
+            answer:
+              "Save The Bread is a financial media platform for Gen Z (ages 18-28). We profile real young people making real money and provide actionable guides on budgeting, investing, side hustles, and building wealth.",
+          },
+          {
+            question: "Who are the Bread Winners?",
+            answer:
+              "Bread Winners are young creators, entrepreneurs, and freelancers featured on Save The Bread. Each profile includes verified income breakdowns, their exact tools and workflows, and key takeaways you can apply.",
+          },
+          {
+            question: "Is Save The Bread free?",
+            answer:
+              "Yes. All content, tools, and resources on Save The Bread are completely free. We believe financial literacy basics should never be paywalled.",
+          },
+          {
+            question: "What tools does Save The Bread offer?",
+            answer:
+              "Save The Bread offers free interactive tools including a Budget Calculator, Side Hustle Finder quiz, and Savings Tracker to help young adults manage their finances.",
+          },
+        ]}
+      />
+
       {/* ===== CATEGORY CHIPS (YouTube pattern) ===== */}
       <section className="sticky top-16 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-4">

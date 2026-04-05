@@ -14,9 +14,22 @@ const lifeContextChips = [
 ];
 
 export const metadata = {
-  title: "Articles",
+  title: "Articles — Money Guides & Side Hustle Playbooks",
   description:
-    "Money moves, side hustle playbooks, and financial guides organized by life context.",
+    "Money moves, side hustle playbooks, and financial guides for Gen Z. Real income breakdowns, step-by-step strategies, and no fluff.",
+  keywords: ["money guides", "side hustle playbooks", "financial guides", "Gen Z finance", "budgeting", "investing for beginners"],
+  openGraph: {
+    title: "Articles — Money Guides & Side Hustle Playbooks",
+    description: "Money moves, side hustle playbooks, and financial guides for Gen Z.",
+    url: "https://savethebread.com/articles",
+    type: "website" as const,
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "Articles | Save The Bread",
+    description: "Money moves, side hustle playbooks, and financial guides for Gen Z.",
+  },
+  alternates: { canonical: "https://savethebread.com/articles" },
 };
 
 export default function ArticlesPage() {
